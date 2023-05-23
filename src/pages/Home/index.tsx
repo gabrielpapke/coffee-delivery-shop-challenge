@@ -1,3 +1,13 @@
+import { HomeLayout } from './styles'
+
+import { Banner } from './components/Banner'
+import { List } from './components/List'
+
 export function Home() {
-  return <>Home Page</>
+  return (
+    <HomeLayout>
+      <Banner />
+      <List />
+    </HomeLayout>
+  )
 }
