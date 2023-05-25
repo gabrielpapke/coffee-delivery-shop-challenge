@@ -4,6 +4,8 @@ import background from '../../../../assets/images/background.png'
 
 export const BannerContainer = styled.div`
   background-image: url(${background});
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   padding: 5.875rem 0 6.75rem;
 
@@ -23,6 +25,7 @@ export const BannerContainer = styled.div`
     line-height: 1.3;
     color: ${(props) => props.theme['base-title']};
     padding-bottom: 1rem;
+    font-weight: 800;
   }
 
   p {
