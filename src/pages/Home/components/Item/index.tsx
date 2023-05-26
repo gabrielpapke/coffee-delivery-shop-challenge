@@ -27,7 +27,7 @@ export function Item() {
         </span>
 
         <div>
-          <InputCounter />
+          <InputCounter value={1} />
 
           <button>
             <ShoppingCart weight="fill" size={24} />

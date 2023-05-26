@@ -1,7 +1,8 @@
-import { BannerContainer } from './styles'
-import bannerImage from '../../../../assets/images/banner.png'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
+
+import { BannerContainer } from './styles'
 import { Container } from '../../../../styles/styles'
+import bannerImage from '../../../../assets/images/banner.png'
 
 export function Banner() {
   return (
