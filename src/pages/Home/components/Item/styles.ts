@@ -10,7 +10,7 @@ export const ItemContainer = styled.div`
   border-top-left-radius: 6px;
   border-bottom-left-radius: 36px;
   border-top-right-radius: 36px;
-  border-bottom-right-radius: 36px;
+  border-bottom-right-radius: 6px;
 
   .coffee-details {
     display: flex;
