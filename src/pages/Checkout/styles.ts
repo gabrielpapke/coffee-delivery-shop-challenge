@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import { Container } from '../../styles/styles'
 
 export const CheckoutLayout = styled(Container)`
-  display: grid;
-  grid-template-columns: 1fr 448px;
-  gap: 2rem;
-  padding-top: 2.5rem;
+  form {
+    display: grid;
+    grid-template-columns: 1fr 448px;
+    gap: 2rem;
+    padding-top: 2.5rem;
+  }
 
   h2 {
     font-family: 'Baloo 2', cursive;
@@ -38,5 +40,21 @@ export const Card = styled.div`
 
   & ~ div {
     margin-top: 0.75rem;
+  }
+
+  header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+
+    h3 {
+      font-weight: 700;
+      color: ${(props) => props.theme['base-subtitle']};
+    }
+
+    p {
+      font-size: 0.875rem;
+    }
   }
 `

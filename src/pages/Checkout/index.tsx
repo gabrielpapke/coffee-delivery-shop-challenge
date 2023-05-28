@@ -5,21 +5,27 @@ import { PaymentMethod } from './components/PaymentMethod'
 import { CheckoutLayout } from './styles'
 
 export function Checkout() {
+  function handleSubmit() {
+    return console.log('submit')
+  }
+
   return (
     <CheckoutLayout>
-      <div>
-        <h2>Complete seu pedido</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <h2>Complete seu pedido</h2>
 
-        <AddressForm className="card" />
+          <AddressForm />
 
-        <PaymentMethod className="card" />
-      </div>
+          <PaymentMethod />
+        </div>
 
-      <div>
-        <h2>Cafés selecionados</h2>
+        <div>
+          <h2>Cafés selecionados</h2>
 
-        <Cart className="card" />
-      </div>
+          <Cart />
+        </div>
+      </form>
     </CheckoutLayout>
   )
 }
