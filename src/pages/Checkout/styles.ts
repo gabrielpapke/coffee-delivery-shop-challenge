@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Container } from '../../styles/styles'
 
 export const CheckoutLayout = styled(Container)`
+  padding-bottom: 4rem;
   form {
     display: grid;
     grid-template-columns: 1fr 448px;
