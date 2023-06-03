@@ -49,30 +49,4 @@ export const BannerContainer = styled.div`
     gap: 0.75rem;
     font-size: 0.875rem;
   }
-
-  ul li i {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: ${(props) => props.theme.white};
-
-    &.icon-shop {
-      background-color: ${(props) => props.theme['yellow-dark']};
-    }
-
-    &.icon-package {
-      background-color: ${(props) => props.theme['base-text']};
-    }
-
-    &.icon-timer {
-      background-color: ${(props) => props.theme.yellow};
-    }
-
-    &.icon-coffee {
-      background-color: ${(props) => props.theme.purple};
-    }
-  }
 `

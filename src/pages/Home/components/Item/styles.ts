@@ -97,6 +97,10 @@ export const ItemContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &:hover {
+        background: ${(props) => props.theme.purple};
+      }
     }
   }
 `

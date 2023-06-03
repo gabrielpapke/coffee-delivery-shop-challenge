@@ -1,5 +1,7 @@
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
 
+import { IconCircle } from '../../../../components/IconCircle'
+
 import { BannerContainer } from './styles'
 import { Container } from '../../../../styles/styles'
 import bannerImage from '../../../../assets/images/banner.png'
@@ -18,31 +20,27 @@ export function Banner() {
 
           <ul>
             <li>
-              <i className="icon-shop">
-                <ShoppingCart weight="fill" size={18} />
-              </i>
-              Compra simples e segura
+              <IconCircle iconBackgroundColor="yellow-dark" Icon={ShoppingCart}>
+                Compra simples e segura
+              </IconCircle>
             </li>
 
             <li>
-              <i className="icon-package">
-                <Package weight="fill" size={18} />
-              </i>
-              Embalagem mantém o café intacto
+              <IconCircle iconBackgroundColor="base-text" Icon={Package}>
+                Embalagem mantém o café intacto
+              </IconCircle>
             </li>
 
             <li>
-              <i className="icon-timer">
-                <Timer weight="fill" size={18} />
-              </i>
-              Entrega rápida e rastreada
+              <IconCircle iconBackgroundColor="yellow" Icon={Timer}>
+                Entrega rápida e rastreada
+              </IconCircle>
             </li>
 
             <li>
-              <i className="icon-coffee">
-                <Coffee weight="fill" size={18} />
-              </i>
-              O café chega fresquinho até você
+              <IconCircle iconBackgroundColor="purple" Icon={Coffee}>
+                O café chega fresquinho até você
+              </IconCircle>
             </li>
           </ul>
         </div>
