@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CartButtonContainer = styled.a`
+export const CartButtonContainer = styled.div`
   background-color: ${(props) => props.theme['yellow-light']};
   display: block;
   position: relative;

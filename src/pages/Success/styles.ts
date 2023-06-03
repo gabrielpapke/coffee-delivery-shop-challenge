@@ -5,6 +5,8 @@ export const SuccessLayout = styled(Container)`
   padding-bottom: 4rem;
 
   header {
+    padding-top: 5rem;
+
     h2 {
       font-family: 'Baloo 2', cursive;
       font-weight: 800;

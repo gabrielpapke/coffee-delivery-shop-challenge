@@ -104,4 +104,14 @@ export const CartListContainer = styled.ul`
   .price {
     font-weight: 700;
   }
+
+  .emptyCart {
+    text-align: center;
+    strong {
+      color: ${(props) => props.theme.purple};
+      font-size: 1.25rem;
+      display: block;
+      font-family: 'Baloo 2', cursive;
+    }
+  }
 `
