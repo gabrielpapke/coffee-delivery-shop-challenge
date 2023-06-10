@@ -1,6 +1,9 @@
-import { ReactNode, createContext, useReducer, useState } from 'react'
+import { ReactNode, createContext, useReducer } from 'react'
 import { Coffee, CoffeeCart, cartReducer } from '../reducers/cart/reducer'
-import { addItemToCartAction } from '../reducers/cart/actions'
+import {
+  removeCartItemAction,
+  updateCartItemAction,
+} from '../reducers/cart/actions'
 
 interface CoffeeDeliveryContextProviderProps {
   children: ReactNode
@@ -9,7 +12,8 @@ interface CoffeeDeliveryContextProviderProps {
 interface CoffeeDeliveryContextType {
   cartItems: CoffeeCart[]
   totalCounter: number
-  addItemToCart: (item: any, qty: number) => void
+  updateCartItem: (item: Coffee, qty: number) => void
+  removeCartItem: (item: Coffee) => void
 }
 
 export const CoffeeDeliveryContext = createContext(
@@ -26,8 +30,12 @@ export function CoffeeDeliveryContextProvider({
 
   const { cartItems, totalCounter } = cartState
 
-  function addItemToCart(item: Coffee, qty: number) {
-    dispatchCart(addItemToCartAction(item, qty))
+  function updateCartItem(item: Coffee, qty: number) {
+    dispatchCart(updateCartItemAction(item, qty))
+  }
+
+  function removeCartItem(item: Coffee) {
+    dispatchCart(removeCartItemAction(item))
   }
 
   return (
@@ -35,7 +43,8 @@ export function CoffeeDeliveryContextProvider({
       value={{
         cartItems,
         totalCounter,
-        addItemToCart,
+        updateCartItem,
+        removeCartItem,
       }}
     >
       {children}

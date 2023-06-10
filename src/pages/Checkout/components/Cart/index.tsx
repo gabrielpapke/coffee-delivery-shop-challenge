@@ -2,16 +2,29 @@ import { Trash } from '@phosphor-icons/react'
 import { InputCounter } from '../../../../components/InputCounter'
 import expressoImg from '../../../../assets/images/coffee-types/expresso.svg'
 import { CartContainer, CartListContainer } from './styles'
+import { useContext } from 'react'
+import { CoffeeDeliveryContext } from '../../../../contexts/CoffeeDeliveryContext'
+import { Coffee } from '../../../../reducers/cart/reducer'
 
 export function Cart() {
-  const items: any[] = [
-    // {
-    //   name: 'Expresso Tradicional',
-    // },
-    // {
-    //   name: 'Expresso Americano',
-    // },
-  ]
+  const {
+    cartItems: items,
+    updateCartItem,
+    removeCartItem,
+  } = useContext(CoffeeDeliveryContext)
+
+  function handleClickMore(item: Coffee) {
+    updateCartItem(item, 1)
+  }
+
+  function handleClickLess(item: Coffee) {
+    updateCartItem(item, -1)
+  }
+
+  function handleRemove(item: Coffee) {
+    removeCartItem(item)
+  }
+
   return (
     <CartContainer>
       <CartListContainer>
@@ -24,15 +37,24 @@ export function Cart() {
                 <span className="product-name">{item.name}</span>
 
                 <div className="cart-options">
-                  <InputCounter inputSize="small" value={1} />
+                  <InputCounter
+                    onClickMore={() => handleClickMore(item)}
+                    onClickLess={() => handleClickLess(item)}
+                    inputSize="small"
+                    value={item.qty}
+                  />
 
-                  <button className="remove" type="button">
+                  <button
+                    className="remove"
+                    type="button"
+                    onClick={() => handleRemove(item)}
+                  >
                     <Trash weight="regular" size={16} />
                     Remover
                   </button>
                 </div>
               </div>
-              <span className="price">R$ 19,90</span>
+              <span className="price">R$ {item.price}</span>
             </li>
           ))
         ) : (

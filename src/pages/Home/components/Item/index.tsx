@@ -13,7 +13,7 @@ interface ItemProps {
 }
 
 export function Item({ coffee }: ItemProps) {
-  const { addItemToCart } = useContext(CoffeeDeliveryContext)
+  const { updateCartItem } = useContext(CoffeeDeliveryContext)
   const [qty, setQty] = useState(1)
 
   function handleLessClick() {
@@ -24,7 +24,7 @@ export function Item({ coffee }: ItemProps) {
   }
 
   function handleAddToCart() {
-    addItemToCart(coffee, qty)
+    updateCartItem(coffee, qty)
 
     setQty(1)
   }

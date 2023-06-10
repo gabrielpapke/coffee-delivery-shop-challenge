@@ -19,10 +19,12 @@ interface CartState {
 
 export function cartReducer(state: CartState, action: any): CartState {
   switch (action.type) {
-    case ActionsType.ADD_TO_CART: {
+    case ActionsType.UPDATE_CART_ITEM: {
       const newItemId = action.payload.item.id
 
       const itemFound = state.cartItems.find((item) => item.id === newItemId)
+
+      if (itemFound?.qty === 1 && action.payload.qty < 0) return state
 
       if (itemFound) {
         return {
@@ -44,6 +46,15 @@ export function cartReducer(state: CartState, action: any): CartState {
             qty: action.payload.qty,
           },
         ],
+      }
+    }
+
+    case ActionsType.REMOVE_CART_ITEM: {
+      const { id: itemId, qty: itemQty } = action.payload.item
+
+      return {
+        totalCounter: state.totalCounter - itemQty,
+        cartItems: state.cartItems.filter((item) => item.id !== itemId),
       }
     }
     default:
