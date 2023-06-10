@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const InputBaseContainer = styled.div`
+  user-select: none;
+
   max-width: 4.5rem;
   display: flex;
   align-items: center;
@@ -26,6 +28,7 @@ const InputBaseContainer = styled.div`
     background: transparent;
     border: 0;
     text-align: center;
+    cursor: default;
     color: ${(props) => props.theme['base-title']};
 
     &:focus {
