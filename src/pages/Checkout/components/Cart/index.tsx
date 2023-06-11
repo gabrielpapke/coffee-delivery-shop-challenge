@@ -5,6 +5,7 @@ import { CartContainer, CartListContainer } from './styles'
 import { useContext } from 'react'
 import { CoffeeDeliveryContext } from '../../../../contexts/CoffeeDeliveryContext'
 import { Coffee } from '../../../../reducers/cart/reducer'
+import { formatPrice } from '../../../../utils'
 
 export function Cart() {
   const {
@@ -31,7 +32,7 @@ export function Cart() {
         {items && items.length ? (
           items.map((item, index) => (
             <li key={index}>
-              <img src={expressoImg} alt="" />
+              <img src={item.imagePath} alt="" />
 
               <div>
                 <span className="product-name">{item.name}</span>
@@ -54,7 +55,7 @@ export function Cart() {
                   </button>
                 </div>
               </div>
-              <span className="price">R$ {item.price}</span>
+              <span className="price">R$ {formatPrice(item.price)}</span>
             </li>
           ))
         ) : (

@@ -6,6 +6,7 @@ export interface Coffee {
   description: string
   price: number
   tags?: string[]
+  imagePath: string
 }
 
 export interface CoffeeCart extends Coffee {

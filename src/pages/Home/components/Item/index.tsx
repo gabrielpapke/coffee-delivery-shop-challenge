@@ -7,6 +7,7 @@ import { InputCounter } from '../../../../components/InputCounter'
 import { useContext, useState } from 'react'
 import { CoffeeDeliveryContext } from '../../../../contexts/CoffeeDeliveryContext'
 import { Coffee } from '../../../../reducers/cart/reducer'
+import { formatPrice } from '../../../../utils'
 
 interface ItemProps {
   coffee: Coffee
@@ -31,7 +32,7 @@ export function Item({ coffee }: ItemProps) {
   return (
     <ItemContainer>
       <div className="coffee-details">
-        <img src={expressoImg} alt="Café Expresso Tradicional" />
+        <img src={coffee.imagePath} alt="Café Expresso Tradicional" />
 
         <span className="tags">
           {coffee.tags?.map((tag) => (
@@ -46,7 +47,8 @@ export function Item({ coffee }: ItemProps) {
 
       <div className="bottom-details">
         <span className="price">
-          <small>R$</small>&nbsp;{coffee.price}
+          <small>R$</small>&nbsp;
+          {formatPrice(coffee.price)}
         </span>
 
         <div>

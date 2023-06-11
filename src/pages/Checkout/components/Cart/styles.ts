@@ -103,6 +103,7 @@ export const CartListContainer = styled.ul`
 
   .price {
     font-weight: 700;
+    text-align: right;
   }
 
   .emptyCart {
