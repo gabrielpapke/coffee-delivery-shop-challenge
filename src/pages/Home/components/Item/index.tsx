@@ -2,7 +2,6 @@ import { ShoppingCart } from '@phosphor-icons/react'
 
 import { ItemContainer } from './styles'
 
-import expressoImg from '../../../../assets/images/coffee-types/expresso.svg'
 import { InputCounter } from '../../../../components/InputCounter'
 import { useContext, useState } from 'react'
 import { CoffeeDeliveryContext } from '../../../../contexts/CoffeeDeliveryContext'
@@ -28,6 +27,8 @@ export function Item({ coffee }: ItemProps) {
     updateCartItem(coffee, qty)
 
     setQty(1)
+
+    alert('Item adicionado!')
   }
   return (
     <ItemContainer>

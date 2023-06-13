@@ -1,6 +1,5 @@
 import { Trash } from '@phosphor-icons/react'
 import { InputCounter } from '../../../../components/InputCounter'
-import expressoImg from '../../../../assets/images/coffee-types/expresso.svg'
 import { CartContainer, CartListContainer } from './styles'
 import { useContext } from 'react'
 import { CoffeeDeliveryContext } from '../../../../contexts/CoffeeDeliveryContext'
@@ -24,7 +23,12 @@ export function Cart() {
 
   function handleRemove(item: Coffee) {
     removeCartItem(item)
+    alert('Item removido.')
   }
+
+  const amount = items.reduce((acc, curr) => acc + curr.price * curr.qty, 0)
+  const deliveryFee = 3.5
+  const totalWithDelivery = amount + deliveryFee
 
   return (
     <CartContainer>
@@ -71,17 +75,17 @@ export function Cart() {
           <div className="cart-totals">
             <div>
               <small>Total de itens</small>
-              <span>R$ 29,70</span>
+              <span>R$ {formatPrice(amount)}</span>
             </div>
 
             <div>
               <small>Entrega</small>
-              <span>R$ 3,50</span>
+              <span>R$ {formatPrice(deliveryFee)}</span>
             </div>
 
             <div>
               <strong>Total</strong>
-              <strong>R$ 33,20</strong>
+              <strong>R$ {formatPrice(totalWithDelivery)}</strong>
             </div>
           </div>
 
