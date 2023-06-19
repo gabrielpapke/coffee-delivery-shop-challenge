@@ -3,7 +3,7 @@ import { Container } from '../../styles/styles'
 
 export const CheckoutLayout = styled(Container)`
   padding-bottom: 4rem;
-  form {
+  .container {
     display: grid;
     grid-template-columns: 1fr 448px;
     gap: 2rem;

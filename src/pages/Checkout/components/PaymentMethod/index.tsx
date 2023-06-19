@@ -1,9 +1,12 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from '@phosphor-icons/react'
 import { PaymentMethodContainer, OptionContainer } from './styles'
 import { useTheme } from 'styled-components'
+import { useFormContext } from 'react-hook-form'
+import { PaymentMethodEnum } from '../../../../contexts/CoffeeDeliveryContext'
 
 export function PaymentMethod() {
   const theme = useTheme()
+  const { register } = useFormContext()
 
   return (
     <PaymentMethodContainer>
@@ -21,7 +24,13 @@ export function PaymentMethod() {
 
       <fieldset>
         <OptionContainer>
-          <input type="radio" value="credit" name="paymentMethod" id="credit" />
+          <input
+            {...register('paymentMethod')}
+            type="radio"
+            value={PaymentMethodEnum.CREDIT_CARD}
+            name="paymentMethod"
+            id="credit"
+          />
           <label htmlFor="credit">
             <CreditCard weight="regular" size={16} />
             Cartão de Crédito
@@ -29,7 +38,13 @@ export function PaymentMethod() {
         </OptionContainer>
 
         <OptionContainer>
-          <input type="radio" value="debit" name="paymentMethod" id="debit" />
+          <input
+            {...register('paymentMethod')}
+            type="radio"
+            value={PaymentMethodEnum.DEBIT_CARD}
+            name="paymentMethod"
+            id="debit"
+          />
           <label htmlFor="debit">
             <Bank weight="regular" size={16} />
             Cartão de Débito
@@ -37,7 +52,13 @@ export function PaymentMethod() {
         </OptionContainer>
 
         <OptionContainer>
-          <input type="radio" value="cash" name="paymentMethod" id="cash" />
+          <input
+            {...register('paymentMethod')}
+            type="radio"
+            value={PaymentMethodEnum.CASH}
+            name="paymentMethod"
+            id="cash"
+          />
           <label htmlFor="cash">
             <Money weight="regular" size={16} />
             Dinheiro

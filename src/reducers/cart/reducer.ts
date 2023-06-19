@@ -58,6 +58,14 @@ export function cartReducer(state: CartState, action: any): CartState {
         cartItems: state.cartItems.filter((item) => item.id !== itemId),
       }
     }
+
+    case ActionsType.CLEAR_CART: {
+      return {
+        totalCounter: 0,
+        cartItems: [],
+      }
+    }
+
     default:
       return state
   }

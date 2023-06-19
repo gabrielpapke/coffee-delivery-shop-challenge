@@ -2,8 +2,11 @@ import { SuccessLayout } from './styles'
 import successIllustration from '../../assets/images/success-illustration.svg'
 import { CurrencyDollar, MapPin, Package } from '@phosphor-icons/react'
 import { IconCircle } from '../../components/IconCircle'
+import { CoffeeDeliveryContext } from '../../contexts/CoffeeDeliveryContext'
+import { useContext } from 'react'
 
 export function Success() {
+  const { address, paymentMethod } = useContext(CoffeeDeliveryContext)
   return (
     <SuccessLayout>
       <header>
@@ -16,8 +19,12 @@ export function Success() {
         <div className="box">
           <IconCircle Icon={MapPin} iconBackgroundColor="purple">
             <div>
-              Entrega em <strong>Rua João Daniel Martinelli, 102</strong> <br />
-              Farrapos - Porto Alegre, RS
+              Entrega em{' '}
+              <strong>
+                {address.rua}, {address.numero}
+              </strong>{' '}
+              <br />
+              {address.bairro} - {address.cidade}, {address.estado}
             </div>
           </IconCircle>
 
@@ -35,7 +42,7 @@ export function Success() {
           >
             <div>
               Pagamento na entrega <br />
-              <strong>Cartão de Crédito</strong>
+              <strong>{paymentMethod}</strong>
             </div>
           </IconCircle>
         </div>

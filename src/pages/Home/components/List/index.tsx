@@ -114,7 +114,7 @@ export function List() {
       imagePath: '/images/coffee-types/arabe.svg',
     },
     {
-      id: '13',
+      id: '14',
       name: 'Irlandês',
       description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
       price: 14.9,

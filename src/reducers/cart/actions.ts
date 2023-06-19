@@ -3,6 +3,7 @@ import { Coffee } from './reducer'
 export enum ActionsType {
   UPDATE_CART_ITEM = 'UPDATE_CART_ITEM',
   REMOVE_CART_ITEM = 'REMOVE_CART_ITEM',
+  CLEAR_CART = 'CLEAR_CART',
 }
 
 export function updateCartItemAction(item: Coffee, qty: number) {
@@ -21,5 +22,11 @@ export function removeCartItemAction(item: Coffee) {
     payload: {
       item,
     },
+  }
+}
+
+export function clearCartAction() {
+  return {
+    type: ActionsType.CLEAR_CART,
   }
 }

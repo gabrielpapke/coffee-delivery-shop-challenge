@@ -19,13 +19,48 @@ export function AddressForm() {
       </header>
 
       <fieldset>
-        <Input type="text" placeholder="CEP" required />
-        <Input type="text" placeholder="Rua" required />
-        <Input type="text" placeholder="Número" required />
-        <Input type="text" placeholder="Complemento" />
-        <Input type="text" placeholder="Bairro" required />
-        <Input type="text" placeholder="Cidade" required />
-        <Input type="text" placeholder="UF" required />
+        <Input name="cep" id="cep" type="text" placeholder="CEP" required />
+
+        <Input name="rua" id="rua" type="text" placeholder="Rua" required />
+
+        <Input
+          name="numero"
+          id="numero"
+          type="text"
+          placeholder="Número"
+          required
+        />
+
+        <Input
+          name="complemento"
+          id="complemento"
+          type="text"
+          placeholder="Complemento"
+        />
+
+        <Input
+          name="bairro"
+          id="bairro"
+          type="text"
+          placeholder="Bairro"
+          required
+        />
+
+        <Input
+          name="cidade"
+          id="cidade"
+          type="text"
+          placeholder="Cidade"
+          required
+        />
+
+        <Input
+          name="estado"
+          id="estado"
+          type="text"
+          placeholder="UF"
+          required
+        />
       </fieldset>
     </AddressFormContainer>
   )
